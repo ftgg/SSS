@@ -20,7 +20,8 @@ Im Anschluss wird uns ein Pythonskript TODO REF die differenz der einzelnen Bere
 \label{chap:VERSUCH_4_MESSWERTE}
 
 \section{Auswertung}
-Bei genauerer Betrachtung des Kontrast maximierten Dunkelbildes \ref{img:struckpixel.png} fallen einige weisse Punkte ins Auge. Hierbei handelt es sich um hotpixel, welche durch längere Belichtungszeit in die Sättigung gehen oder um stuckpixel, welche sich stehts auf ihrem maximalwert bleiben $(rot markiert)$
+Bei genauerer Betrachtung des Kontrast maximierten Dunkelbildes \ref{img:struckpixel.png} fallen einige weisse Punkte ins Auge. Hierbei handelt es sich um hotpixel, welche durch längere Belichtungszeit in die Sättigung gehen oder um stuckpixel, welche sich stehts auf ihrem maximalwert bleiben $(rot markiert)$.
+Zum korrigieren unseres Graukeilbildes wird zuerst das Dunkelbild abgezogen und anschließend durch das Weissbild dividiert. Die Formel $y = a\cdot x+b$ erklärt dieses Vorgehen. $y$ ist der durch die Kamera gelieferte Pixel. Dieser berechnet sich aus dem tatsächlichen Wert $x$ und der Sättigung $a$ zusätzlich beeinflusst noch der Offset $b$ das Ergebnis. Durch subtraktion des Offsets $b$ welcher uns das Schwarzbild liefert und anschließender division der Sättigung $a$ welche uns das Weissbild liefert erhalten wir die Formel: $x = (y-b)/a$ 
 \label{chap:VERSUCH_4_AUSWERTUNG}
 
 \section{Interpretation}
