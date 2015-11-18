@@ -2,18 +2,24 @@
 % CHAPTER Versuch 2
 %
 \chapter{Aufnahme eines Dunkelbildes}
-In diesem Versuch erstellen wir ein Dunkelbild zur Beseitigung des Offsets jedes Pixels.
+In diesem Versuch wird ein Dunkelbild zur Beseitigung des Offsets jedes Pixel erstellt.
 \label{chap:Aufnahme_eines_Dunkelbildes}
 
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
-Bei der aufnahme eines Dunkelbild
+Im zweiten Teil unseres Versuchs, werden 10 Dunkelbilder aufgenommen um den Pixel Offset zu bestimmen. Es werden mehrere Bilder benötigt um den Einfluss des thermische Rauschen der Ausleseelektronik auf unser Messergebnis möglichst gering zu halten. Das Pythonskript TODO REF berechnet den Pixelweisen Mittelwert und speichert das Durchschnittsbild ab.Das so erstellte neue Bild,  entspricht dem Durchschnitt der 10 aufgenommenen Bilder und sollte jetzt nur noch den Offset bzw. Dunkelstrom der jeweiligen Pixel, für die gewählte Belichtungszeit, enthalten. Der pixel Offset, welcher durch einem leicht unterschiedlichen Nullpunkt der einzelnen Pixel entstanden ist, erklärt sich durch die Fertigungstoleranzen oder die durch Wärmezufuhr entstandene Ladung. Das so entstandene Bild \ref{img:dunkelbild_kontrastmax} enthält jetzt nur noch minimales thermisches Rauschen und kann somit als Pixel weiser Offset für spätere Rechnungen verwendet werden.
 \label{chap:VERSUCH_2_FRAGESTELLUNG}
 
 \section{Messwerte}
+\begin{figure}[H]
+\centering
+\includegraphics{dunkelbildMean_maximiert.png}
+\caption{Kontrastmaximiertes Dunkelbild}
+\label{img:dunkelbild_kontrastmax}
+\end{figure}
 \label{chap:VERSUCH_2_MESSWERTE}
 
-\section{Auswertung}
+\section{Auswertung und Interpretation}
+Das Dunkelbild kann jetzt zum korrigieren unseres grauwertkeil Bildes verwendet werden. Durch subtraktion wird der durch das Dunkelbild errechnete pixel Offset von unserem Bild abgezogen und somit entfernt.
+Bei genauerem Betrachten des kontrastmaximierten Dunkelbildes sind einige graue und weisse Pixel erkennbar. Die weissen Pixel werden später in versuch 4 TODO REF erläutert.
+Die verteilung der hellen Pixel ist nicht weiter verwunderlich, die Mehrheit der Pixel ist komplett schwarz $farbwert = 0$ was bedeutet, dass es hier keinen Offset bzw. Dunkelstrom gibt. Die minderheit ist heller $farbwert > 0$ was einem Dunkelstrom entspricht und somit einen Fehler im Bild hervorruft.
 \label{chap:VERSUCH_2_AUSWERTUNG}
-
-\section{Interpretation}
-\label{chap:VERSUCH_2_INTERPRETATION}
