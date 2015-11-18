@@ -21,7 +21,11 @@ Im Anschluss wird uns ein Pythonskript TODO REF die differenz der einzelnen Bere
 
 \section{Auswertung}
 Bei genauerer Betrachtung des Kontrast maximierten Dunkelbildes \ref{img:struckpixel.png} fallen einige weisse Punkte ins Auge. Hierbei handelt es sich um hotpixel, welche durch längere Belichtungszeit in die Sättigung gehen oder um stuckpixel, welche sich stehts auf ihrem maximalwert bleiben $(rot markiert)$.
-Zum korrigieren unseres Graukeilbildes wird zuerst das Dunkelbild abgezogen und anschließend durch das Weissbild dividiert. Die Formel $y = a\cdot x+b$ erklärt dieses Vorgehen. $y$ ist der durch die Kamera gelieferte Pixel. Dieser berechnet sich aus dem tatsächlichen Wert $x$ und der Sättigung $a$ zusätzlich beeinflusst noch der Offset $b$ das Ergebnis. Durch subtraktion des Offsets $b$ welcher uns das Schwarzbild liefert und anschließender division der Sättigung $a$ welche uns das Weissbild liefert erhalten wir die Formel: $x = (y-b)/a$ 
+Ein Deadpixel ist ein pixel, welcher wie der Name bereits vermuten lässt nicht reagiert,somit ein pixel, welcher stets den wert 0 liefert, eine 0 wird als schwarz interpretiert. Ein schwarzer Pixel ist im Weissbild ziemlich auffällig, aber in unserem Fall nicht vorhanden. Die hier gefundenen schwarzen punkte sind lediglich durch Kontrast maximierung schwarz und somit keine deadpixel.
+Zum korrigieren unseres Graukeilbildes wird zuerst das Dunkelbild abgezogen und anschließend durch das Weissbild dividiert. Die Formel $y = a\cdot x+b$ erklärt dieses Vorgehen. $y$ ist der durch die Kamera gelieferte Pixel. Dieser berechnet sich aus dem tatsächlichen Wert $x$ und der Sättigung $a$ zusätzlich beeinflusst noch der Offset $b$ das Ergebnis. Durch subtraktion des Offsets $b$ welcher uns das Schwarzbild liefert und anschließender division der Sättigung $a$ welche uns das Weissbild liefert erhalten wir die Formel: $x = \frac{y-b}{a}$ und somit den tatsächlichen Pixelwert.
+Das im Pythonskript TODO REF berechnete neue Graustufenbild wird genau wie das Original in seine Graustufen zerlegt. Für diese Graustufen $(g1 - g5)$ werden jetzt jeweils Mittelwert und Standartabweichung berechnet TODO REF TABELLE. Hierbei wird deutlich, dass durch die Korrektur eine deutliche verbesserung erzielt wurde TODO REF TABELLE2, das Rauschen, sichtlbar an der Standartabweichung, wurde um bis zu 78 \% verbessert.
+TODO Tabelle mit verbesserung
+TODO pythonskript miteinbeziehen
 \label{chap:VERSUCH_4_AUSWERTUNG}
 
 \section{Interpretation}
