@@ -7,7 +7,7 @@ def avg_stdabw(array):
     avg = np.mean(array)    
     std = 0
     for a in array:
-        std = std + ((std - avg) ** 2) / (array.size -1)
+        std = std + ((a - avg) ** 2) / (array.size -1)
     std = np.sqrt(std)
     return avg, std
     
