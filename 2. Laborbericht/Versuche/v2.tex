@@ -20,6 +20,6 @@ Im zweiten Teil der Kalibrierung, werden zehn Dunkelbilder aufgenommen um den Pi
 
 \section{Auswertung und Interpretation}
 \label{chap:VERSUCH_2_AUSWERTUNG}
-Bei genauerem Betrachten des kontrastmaximierten Dunkelbildes sind einige graue und weiße Pixel erkennbar. Die weißen Pixel werden später in Versuch vier (Kaptiel \ref{chap:Pixelfehler}) genauer besprochen.
+Bei genauerem Betrachten des kontrastmaximierten Dunkelbildes sind einige graue und weiße Pixel erkennbar. Diese sind aber lediglich durch die Kontrasmaximierung zu sehen. Dies sind also Pixel, die einen Offset haben, welche dann später noch mittels Dunkelbild korrigiert werden.
 Das Dunkelbild entspricht sonst den Erwartungen, da die Mehrheit der Pixel schwarz ist $farbwert \approx 0$. Ist dieser Wert exakt null findet sich hier kein Dunkelstrom \textit{(Offset)} vor. Jedoch scheinen bei genauerer Betrachtung zu viele Pixel exakt bei Wert null zu sein. Vermutlich hat die Kamera eine integrierte Funktion, die schon versucht den Dunkelstrom zu kompensieren.
-Das Dunkelbild kann jetzt zum korrigieren unseres Grauwertkeil Bildes verwendet werden. Der Offset der Übertragungsfunktion eines Pixels wird durch Subtraktion des korespondierenden Pixels im Dunkelbild kompensiert. Das heißt also es wird das ganze Dunkebild vom Graustufenbild subtrahiert, um alle Pixel zu korrigieren.
+Das Dunkelbild kann jetzt zum korrigieren unseres Grauwertkeilbildes verwendet werden. Der Offset der Übertragungsfunktion eines Pixels wird durch Subtraktion des korespondierenden Pixels im Dunkelbild kompensiert. Das heißt also es wird das ganze Dunkebild vom Graustufenbild subtrahiert, um alle Pixel zu korrigieren.
