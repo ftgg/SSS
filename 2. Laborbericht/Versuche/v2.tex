@@ -6,7 +6,7 @@ In diesem Versuch wird ein Dunkelbild zur Beseitigung des Offsets jedes Pixel er
 \label{chap:Aufnahme_eines_Dunkelbildes}
 
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
-Im zweiten Teil unseres Versuchs, werden 10 Dunkelbilder aufgenommen um den Pixel Offset zu bestimmen. Es werden mehrere Bilder benötigt um den Einfluss des thermische Rauschen der Ausleseelektronik auf unser Messergebnis möglichst gering zu halten. Das Pythonskript TODO REF berechnet den Pixelweisen Mittelwert und speichert das Durchschnittsbild ab.Das so erstellte neue Bild,  entspricht dem Durchschnitt der 10 aufgenommenen Bilder und sollte jetzt nur noch den Offset bzw. Dunkelstrom der jeweiligen Pixel, für die gewählte Belichtungszeit, enthalten. Der pixel Offset, welcher durch einem leicht unterschiedlichen Nullpunkt der einzelnen Pixel entstanden ist, erklärt sich durch die Fertigungstoleranzen oder die durch Wärmezufuhr entstandene Ladung. Das so entstandene Bild \ref{img:dunkelbild_kontrastmax} enthält jetzt nur noch minimales thermisches Rauschen und kann somit als Pixel weiser Offset für spätere Rechnungen verwendet werden.
+Im zweiten Teil der Kalibrierung, werden zehn Dunkelbilder aufgenommen um den Pixel Offset zu bestimmen. Es werden mehrere Bilder benötigt um den Einfluss des thermischen Rauschens der Ausleseelektronik auf das Messergebnis möglichst gering zu halten. Das Pythonskript TODO REF berechnet den pixelweisen Mittelwert und speichert das Durchschnittsbild ab. Das so erstellte neue Bild, entspricht dem Mittelwert der zehn aufgenommenen Bilder und sollte jetzt weitgehendst nur noch den systematischen Fehler der jeweiligen Pixel, für die gewählte Belichtungszeit, enthalten. Der Offset in der Übertragungsfunktion des jeweiligen Pixels ist auf Fertigungstoleranzen und dem so entstandenen systematischen Fehler zurückzuführen. Das Mittelwertbild \ref{img:dunkelbild_kontrastmax} enthält jetzt nur noch minimales thermisches Rauschen und kann somit als Pixelweiser Offset für spätere Korrekturen verwendet werden.
 \label{chap:VERSUCH_2_FRAGESTELLUNG}
 
 \section{Messwerte}
@@ -19,7 +19,7 @@ Im zweiten Teil unseres Versuchs, werden 10 Dunkelbilder aufgenommen um den Pixe
 \label{chap:VERSUCH_2_MESSWERTE}
 
 \section{Auswertung und Interpretation}
-Das Dunkelbild kann jetzt zum korrigieren unseres grauwertkeil Bildes verwendet werden. Durch subtraktion wird der durch das Dunkelbild errechnete pixel Offset von unserem Bild abgezogen und somit entfernt.
-Bei genauerem Betrachten des kontrastmaximierten Dunkelbildes sind einige graue und weisse Pixel erkennbar. Die weissen Pixel werden später in versuch 4 TODO REF erläutert.
-Die verteilung der hellen Pixel ist nicht weiter verwunderlich, die Mehrheit der Pixel ist komplett schwarz $farbwert = 0$ was bedeutet, dass es hier keinen Offset bzw. Dunkelstrom gibt. Die minderheit ist heller $farbwert > 0$ was einem Dunkelstrom entspricht und somit einen Fehler im Bild hervorruft.
 \label{chap:VERSUCH_2_AUSWERTUNG}
+Bei genauerem Betrachten des kontrastmaximierten Dunkelbildes sind einige graue und weiße Pixel erkennbar. Die weißen Pixel werden später in Versuch vier (Kaptiel \ref{chap:Pixelfehler}) genauer besprochen.
+Das Dunkelbild entspricht sonst den Erwartungen, da die Mehrheit der Pixel schwarz ist $farbwert \approx 0$. Ist dieser Wert exakt null findet sich hier kein Dunkelstrom \textit{(Offset)} vor. Jedoch scheinen bei genauerer Betrachtung zu viele Pixel exakt bei Wert null zu sein. Vermutlich hat die Kamera eine integrierte Funktion, die schon versucht den Dunkelstrom zu kompensieren.
+Das Dunkelbild kann jetzt zum korrigieren unseres Grauwertkeil Bildes verwendet werden. Der Offset der Übertragungsfunktion eines Pixels wird durch Subtraktion des korespondierenden Pixels im Dunkelbild kompensiert. Das heißt also es wird das ganze Dunkebild vom Graustufenbild subtrahiert, um alle Pixel zu korrigieren.
