@@ -28,10 +28,9 @@ In folgender Tabelle sind die Graustufen von g1 (Weiss) bis g5 (Schwarz) aufgeli
 
 \begin{table}[H]
 \centering
-\begin{tabular}{l|c}
-Graustufe & Durchschnitt vorher & nachher & Standartabweichung vorher & nachher & Verbesserung in \% \\
+\begin{tabular}{l|ccccc}
+Graustufe & Durchschnitt vorher & nachher & Stdabw vorher & nachher & Verbesserung in \% \\
 \hline
-frame height: & 480.0 \\
 g1 & 9.3699 & 9.2598 & 7.4903 & 7.1983 & 3.8981\\
 g2 & 39.1486 &  38.6003 & 5.9921 & 4.5087 & 24.7560\\
 g3 & 85.7785 & 83.8205& 6.9256 & 2.5537 & 63.1272\\
@@ -39,6 +38,7 @@ g4 & 126.9901 & 127.3212 & 8.8584 & 2.3224 & 73.7836\\
 g5 & 152.3874 & 157.0740 & 9.1518 & 1.8588 & 79.6893\\
 
 \end{tabular}
+\end{table}
 Bei genauerer betrachtung des Graukeilbildes fällt in der unteren rechten Ecke ein Fehler auf, welcher bei der aufnahme des Bildes gemacht wurde. Der Graustufenkeil lag nicht so, dass er da gesamte Bild ausfüllte, was jetzt als kleines dunkles Dreieck erkennbar ist. Damit dieser Fehler keinen Einfluss auf dem Durchschnittswert der weissen Graustufe nimmt, werden die untersten 20 Pixel ausgelassen, dies wird im Pythonskript \ref{lst:Graustufen} ersichtlich.
 Die werte der Tabelle, worallem die letzte Spalte zeigen uns, dass unser Aufwand in den vorhergehenden Teilaufgaben nicht vergebens war, das rauschen wurde vorallem in den letzten drei Zeilen sehr effektiv beseitigt.
 \label{chap:VERSUCH_4_AUSWERTUNG}
