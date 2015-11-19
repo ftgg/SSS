@@ -1,20 +1,14 @@
-import cv2read as x
-import matplotlib.pyplot as plt
+import cv2read as cread
 import numpy as np
 import cv2
 
+def getimgmean(filename):			# berechnet das durchschnittsbild
+    avg = np.zeros((480, 640), dtype=np.double)	# zu beginn ein Schwarzes Bild
+    for i in range(1,11):			# alle 10 aufgenommenen Bilder mit gewichtung 1/10
+						# zu einem durchschnitts Bild zusammen addieren.
+        avg = avg + cread.bildoeffnen("../Bilder/" + filename + str(i) + ".png") /10
+    return avg
 
-def getimgmean(filename):
-    avg = np.zeros((480, 640), dtype=np.double)
-    for i in range(1,11):
-        avg = avg + x.bildoeffnen("../Bilder/" + filename + str(i) + ".png") /10
-    pic = avg
-    #pic=x.contrastMax(avg)
-    #plt.imshow(pic, cmap='gray', interpolation='bicubic')
-    return pic
-
-bild = getimgmean("weissbild_")
-img = np.array(bild)
-#plt.imshow(bild, cmap='gray', interpolation='bicubic')
-
-cv2.imwrite("../Bilder/weissbildMean.png", img)
+bild = getimgmean("weissbild_")			# durchschnittliches Weissbild berechnen
+img = np.array(bild)				# in ein numpy array in uint8 umwandeln
+cv2.imwrite("../Bilder/weissbildMean.png", img)	# errechnetes Weissbild Speichern
