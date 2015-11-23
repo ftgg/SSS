@@ -12,7 +12,7 @@
      for y in range(0,array.shape[0]):
          for x in range(0,array.shape[1]): # Standartabweichung bei jedem Pixel berechnen
              std = std + ((array[y][x] - avg) ** 2) / (array.size -1) # quadratischer Fehler
-     std = np.sqrt(std)		# da std mit ² berechnet wurde, benötigt man jetzt noch die Wurzel
+     std = np.sqrt(std)		# da std mit ^2 berechnet wurde, benötigt man jetzt noch die Wurzel
      return avg, std		# gibt durchschnittswert und Standartabweichung zurück
 
  def subimg(img):			# Teilt das Graustufenbild in die einzelnen Graustufen auf
