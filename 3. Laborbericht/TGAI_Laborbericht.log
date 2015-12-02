@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.31)  1 DEC 2015 17:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.31)  2 DEC 2015 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1952,7 +1952,7 @@ our preamble.
 
 \openout2 = `preface/cover.aux'.
 
-(./preface/cover.tex <preface/htwg-logo.pdf, id=67, 1597.97pt x 174.6525pt>
+(./preface/cover.tex <preface/htwg-logo.pdf, id=71, 1597.97pt x 174.6525pt>
 File: preface/htwg-logo.pdf Graphic file (type pdf)
 
 <use preface/htwg-logo.pdf>
@@ -2076,13 +2076,13 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 ]
  2.
-) (./Versuche/v2.tex [2
+[2
 
-]
+]) (./Versuche/v2.tex [3]
  3.
-) [3
+) [4
 
-] [4
+] [5
 
 ]
 \openout2 = `appendix/bibliography.aux'.
@@ -2100,25 +2100,29 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `TGAI_Laborbericht.out' has not changed.
-(rerunfilecheck)             Checksum: 1B29A5F652C77DFA963490AA9A8AE283;2599.
+(rerunfilecheck)             Checksum: F640E5A0622E67294CE8817171D17C0D;2699.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 34450 strings out of 493304
- 670918 string characters out of 6139870
+ 34480 strings out of 493304
+ 671274 string characters out of 6139870
  814721 words of memory out of 5000000
- 37124 multiletter control sequences out of 15000+600000
- 41487 words of font info for 72 fonts, out of 8000000 for 9000
+ 37143 multiletter control sequences out of 15000+600000
+ 44553 words of font info for 79 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,11n,76p,734b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on TGAI_Laborbericht.pdf (10 pages, 89845 bytes).
+ 56i,11n,78p,734b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/s
+hare/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/share/texl
+ive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts
+/type1/public/mnsymbol/MnSymbol12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/mnsymbol/MnSymbol9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on TGAI_Laborbericht.pdf (11 pages, 122108 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

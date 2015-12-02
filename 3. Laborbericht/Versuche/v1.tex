@@ -3,12 +3,38 @@
 %
 \chapter{Bestimmung der Tonhöhe eines akustischen Signals}
 \label{chap:VERSUCH_1}
-In diesem ersten Versuch soll die Tonhöhe eines akustischen Signals bestimmt werden. Als akustischer Signalgeber soll eine Mundharmonika dienen. Da bei einer Mundharmonika Töne durch einzelne Luftkanäle erzeugt werden, die dicht aneinander liegen, ist es für einen Laien auf Anhieb nicht möglich einen einzelnen Ton zu spielen. Damit nun also genau ein Ton zu hören ist wurden alle Luftkanäle bis auf einen abgeklebt.
-Den Ton der Mundharmonika wird dann mit einem Mikrophon aufgenommen, welches an ein Oszilloskop angeschlossen ist. Um dann einen Signalausschnitt auzunehmen wurde der "\textit{Single Sequence"} Modus benutzt. Mit einem Pythonskript wurden dann 2500 Messwerte vom Oszilloskop ausgelesen.
+Bestimmen der Frequenz eines Tones und Fouriertransformation.
  
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
 \label{chap:VERSUCH_1_FRAGESTELLUNG}
+In diesem ersten Versuch soll die Tonhöhe eines akustischen Signals bestimmt werden. Als akustischer Signalgeber wird eine Munharmonika verwendet. Da bei einer Mundharmonika Töne durch einzelne dicht aneinanderliegende Luftkanäle erzeugt werden, ist es für einen Laien auf Anhieb nicht möglich einen einzelnen Ton zu spielen. Damit nun also genau ein Ton zu hören ist wurden alle Luftkanäle bis auf einen abgeklebt.
+Der Ton der Mundharmonika wird dann mit einem Mikrophon aufgenommen, welches an ein Oszilloskop angeschlossen ist. Um dann einen Signalausschnitt auzunehmen wurde der "\textit{Single Sequence"} Modus benutzt. Mit einem Pythonskript wurden dann 2500 Messwerte vom Oszilloskop ausgelesen.
+Aus diesem Signal im Zeitbereich wird dann das Spektrum mithilfe der Fouriertransformation berechnet. Die Umrechnung in das Amplitudenspektrum
+erfolgt mit Hilfe einer Numpy Funktion, die auf der X-Achse jedoch nicht die Frequenz aufträgt, sondern die Einheit \textit{Anzahl Schwingungen innerhalb der gesamten Signaldauer}. Interessant ist jedoch die Frequenz. Deshalb muss diese noch mit folgender Formel errechnet werden.
+\begin{equation}
+f = \dfrac{n}{M \cdot \Delta t}
+\end{equation}
 
+
+
+\section{Messwerte}
+\label{chap:VERSUCH_1_MESSWERTE}
+
+
+\begin{table}[H]
+\begin{tabular}{l|r}
+Eigenschaft & Wert \\ \hline
+Grundfrequenz in Hz & \\
+Grundperiode in ms & \\
+Abtastfreq in Hz & 100 kHz\\
+Signaldauer in s & 0.025s\\
+Abtastinterval $\Delta t$ in s & $1 \cdot 10^{-5}s$\\
+Signalänge $M$ Abtastungen & 2500\\
+
+\end{tabular}
+\caption{Eigenschaften der Messung und Grundfrequenz des Tones}
+\label{tab:Eigenschaften}
+\end{table}
 
 \section{Auswertung und Interpretation}
 \label{chap:VERSUCH_1_AUSWERTUNG}
