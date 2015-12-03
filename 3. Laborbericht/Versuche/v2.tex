@@ -7,7 +7,10 @@ Es gilt für zwei Lautsprecher die Amplitude und Phasenverschiebung eines akusti
 \label{chap:FrequenzgangVonLautsprechern}
 
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
-Um den Frequenzgang eines Lautsprechers zu ermitteln werden Sinussignale mit verschiedenen Frequenzen an diesen angelegt. Die Amplitude eines Signals sollte stets dieselbe sein. Das Signal wird mit einem Sinusgenerator erzeugt und an den Lautsprecher angelegt. Dieses Signal wird an einem Kanal im Oszilloskop gemessen. Der Ton der dabei entsteht wird mit einem Mikrofon aufgenommen und ebenfalls an einem Kanal des Oszilloskops gemessen. Das Mikrofon sollte möglichst stets den gleichen Abstand zum Lautsprecher haben.
+Lineare Systeme sind Systeme, die ein Eigangssignal verarbeiten und lediglich in ihrer Phase und Amplitude verändern. Die Frequenzen bleiben gleich. Die Auswirkung eines solchen Systems auf ein Signal kann man mit dem sogennanten Frequenzgang bemessen. Der Frequenzgang $H(\omega)$ ist ein Faktor, den man mit dem Spektrum des Eingangssignals im System multiplizieren kann. Das Ergebnis entspricht gerade dem Ausgangssignal des Systems. Der Frequenzgang teilt sich in einen Faktor zur Amplitudenmodifikation und einen Faktor zur Phasenverschiebung auf.
+Die Fouriertransformierte der Impulsantwort eines Systems ist gerade der Frequenzgang des selbigen. Die Impulsantwort beschreibt also das System in der Zeitdomäne und der Frequenzgang das Signal in der Frequenzdomäne.
+Lautsprecher sind ebenfalls lineare Systeme und modifizieren Amplitude und Phasengang. Würde man die Sprungantwort dieses Systems ermitteln und diese anschließend ableiten hätte man die Impulsantwort des Systems. Diese könnte man dann Fouriertransformieren und hätte den Frequenzgang für alle möglichen Frequenzen. Da das anlegen eines Sprungsignals jedoch zum Defekt eines Lautsprechers führt muss ein anderes Verfahren angewandt werden. 
+Um den Frequenzgang eines Lautsprechers zu ermitteln werden Sinussignale mit verschiedenen Frequenzen an diesen angelegt. Die Amplitude verschiedener Frequenzen sollte stets dieselbe sein. Das Signal wird mit einem Sinusgenerator erzeugt und an den Lautsprecher angelegt. Dieses Signal wird an einem Kanal im Oszilloskop gemessen. Der Ton der dabei entsteht wird mit einem Mikrofon aufgenommen und ebenfalls an einem Kanal des Oszilloskops gemessen. Das Mikrofon sollte möglichst stets den gleichen Abstand zum Lautsprecher haben.
 Für diesen Versuch werden 17 Messungen, mit unterschiedlichen Frequenzen pro Lautsprecher, gemacht.
 Das erzeugte Sinussignal gilt als Referenzwert welches bei jeder Messung eine Amplitude von 1,5V besitzt.
 Beim Vergleichen beider Werte sollte sowohl eine Phasenverschiebung als auch ein Amplitudenunterschied festgestellt werden. Dazu später mehr.
@@ -25,7 +28,7 @@ Die einzelnen Messungen werden mit folgenden Frequenzen durchgeführt:
 \label{tab:Frequences}
 \caption{Frequenzen zur Frequenzgangmessung}
 \end{table}
-Die Messungen werden im "Single Sequence Mode" durchgeführt, um einen Signalausschnitt zu erlangen.
+Die Messungen werden im "Single Sequence Mode" durchgeführt, um einen Signalausschnitt zu erlangen. Das Mikrofon hat laut Datenblatt einen Arbeitsbereich von 70 - 13.000Hz die Messungen in diesem Versuch beschränken sich auf einen Bereich von 100 - 10.000 Hz. Das bedeutet also, dass dieser Messbereich voll im Bereich des Mikrofones liegt und Messungen in diesem sinnvoll sein sollten.
 Bei jeder Messung wird sowohl die Amplitude des Ausgangssignals, als auch die Phasenverschiebung gemessen und protokolliert. \ref{} TODO
 \label{chap:VERSUCH_2_FRAGESTELLUNG}
 
@@ -85,51 +88,57 @@ Bei jeder Messung wird sowohl die Amplitude des Ausgangssignals, als auch die Ph
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{ein-ausgang.png}
+\includegraphics[width=80mm]{ein-ausgang.png}
 \caption{Eingangsignal Lautsprecher und Ausgangssignal Mikrofon}
 \label{img:EingangAusgang}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{amplitude_gross.png}
+\includegraphics[width=80mm]{amplitude_gross.png}
 \caption{Amplitude Lautsprecher gross}
 \label{img:AmplitudeLGross}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{amplitude_klein.png}
+\includegraphics[width=80mm]{amplitude_klein.png}
 \caption{Amplitude Lautsprecher klein}
 \label{img:AmplitudeLklein}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{phase_gross.png}
+\includegraphics[width=80mm]{phase_gross.png}
 \caption{Phase Lautsprecher Gross}
 \label{img:phase_gross}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{phase_klein.png}
+\includegraphics[width=80mm]{phase_klein.png}
 \caption{Phase Lautsprecher klein}
 \label{img:PhaseKlein}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{amplitudengang.png}
+\includegraphics[width=80mm]{amplitudengang.png}
 \caption{Bode-Diagramm Amplitudengang}
 \label{img:BodeAmplitude}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=165mm]{Phasengang.png}
+\includegraphics[width=80mm]{Phasengang.png}
 \caption{Bode-Diagramm Phasengang}
 \label{img:PhasenGang Bode-Diagramm}
 \end{figure}
 
+
 \section{Auswertung und Interpretation}
+\label{chap:AUSWERTUNGUNDINTERPRETATION}
+In Abbildung \ref{img:EingangAusgang} ist das Signal vom Sinusgenerator in Gelb und das Aufgenommene Signal in Blau zu sehen. Die Vertikalen Linien zeigen die Phasenverschiebung der beiden Signale an. Auf diesem Bild scheinen sich die Amplituden nicht zu unterscheiden. Dies hängt aber lediglich von der Skalierung der einzelnen Kurven im Oszilloskop ab. Die eigentlichen Amplituden sind den Tabellen \ref{tab:MLg} und \ref{tab:MLk} zu entnehmen. Bei der Abbildung handelt es sich nur um eine Beispielhaftes Signal, welche nachträglich zum Versuch aufgenommen wurde. Leider ist auf dieser Abbildung kein Unterschied der Amplituden zu sehen.
+
+Um den Frequenzgang des linearen Systems Lautsprecher zu bestimmen interessiert der jeweilige Amplitudengang, sowie der Phasengang. Da der Amplitudengang nicht in Abhängikeit der Eingangsspannung von 1.5 V bestimmt werden soll, wird für das Bode-Diagramm das Verhältnis bestimmt. In Abbildung \ref{img:AmplitudeLGross} bzw. \ref{img:AmplitudeLklein} sind trotzdem nochmal die Amplitudenverläufe für die entsprechenden Frequenzen zu sehen. Die Messung der Phasenverschiebungen sind ebenfalls in zwei Diagrammen aufgetragen, so dass man für jede gemessene Frequenz sehen kann, wie sich die Phasenverschiebung verhält. Das Verhalten der Lautsprecher im Bezug auf die Amplitude und die Phase soll im Kontext mit den Bode-Diagrammen diskutiert werden.
+
