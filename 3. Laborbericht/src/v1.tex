@@ -19,7 +19,7 @@
  #TekTDS2000: Record length: 2500
  \end{lstlisting}
  
-  
+\newpage
   \begin{lstlisting}[style=PYTHON,frame=single,
    caption=Zum umwandeln der Mundharmonika Schwingung
    captionpos=b,
@@ -50,7 +50,7 @@
        plt.figure(figsize=(10, 5), dpi=800)
        plt.xlabel("Frequenz [$Hz$]")
        plt.ylabel("Amplitude")
-       plt.plot(range(0,16000,40), fft[:400], label="Fourierdomäne")   # gekürzt bei 400, rest uninteressant
+       plt.plot(range(0,16000,40), fft[:400], label="Fourierdomaene")
        plt.plot((910, 910), (3, 0), 'k-', color='red',label="Grundschwingung = 910 Hz") # Grundfrequenz
        #plt.plot((1820, 1820), (3, 0), 'k-', color='red') # 1 Harmonische
        #plt.plot((2730, 2730), (3, 0), 'k-', color='red') # 2 Harmonische

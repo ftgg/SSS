@@ -15,7 +15,7 @@
       plt.xticks(range(0,2501,250))
       plt.ylabel("Amplitude")
       plt.xlabel("Abtastzeitpunkt")
-      resize_mic = input_mic[:,1:2] * 40  # mal 40, da mikrophonsignal etwa 40 mal schwächer ist
+      resize_mic = input_mic[:,1:2] * 40  # mal 40, da mikrophonsignal etwa 40 mal schwaecher ist
       plt.plot(input_sig[:,1:2], color='y', label='1kHz Eingang')
       plt.plot(resize_mic, color='b', label='Ausgang')
       plt.plot((845, 845), (-1, 1), '-', color='red',label='Phasenverschiebung')
@@ -23,8 +23,6 @@
       plt.legend()
       plt.show()
   
-  
-  # Bode-Diagramm für Amplitude
   def amplitude(datak, datag, x):
       datak = datak / 1500   # normierung
       datak = np.log10(np.abs(datak))
@@ -34,18 +32,16 @@
       datag = datag * 20    # dB
       plt.figure(figsize=(8, 5), dpi=800)   
       plt.semilogx(x, datak, label="kleiner Lautsprecher")
-      plt.semilogx(x, datag, label="großer Lautsprecher")
+      plt.semilogx(x, datag, label="grosser Lautsprecher")
       plt.xlabel("Frequenz")
       plt.ylabel("Amplitudengang [$dB$]")
       plt.legend()
       plt.show()
   
-  
-  # Bode-Diagramm für Phasengang
   def phase(datak, datag, x):
       plt.figure(figsize=(8, 5), dpi=800)   
       plt.semilogx(x, datak, label="kleiner Lautsprecher")
-      plt.semilogx(x, datag, label="großer Lautsprecher")
+      plt.semilogx(x, datag, label="grosser Lautsprecher")
       plt.xlabel("Frequenz")
       plt.ylabel("Phasengang")
       plt.legend()
