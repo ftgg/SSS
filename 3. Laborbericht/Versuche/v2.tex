@@ -3,21 +3,34 @@
 %
 \chapter{Frequenzgang von Lautsprechern}
 Es gilt für zwei Lautsprecher die Amplitude und Phasenverschiebung eines akustischen Signales festzustellen.
-Hierzu wird das Eingangssignal des Lautsprechers, welches in einem Sinusgenerator erzeugt wird, auf dem Oszilloskop dargestellt. Und das Ausgangssignal mittelt eines Mikrophons aufgenommen ebenfalls auf dem Oszilloskop angezeigt.
 
-\label{chap:Aufnahme_eines_Dunkelbildes}
+\label{chap:FrequenzgangVonLautsprechern}
 
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
-Für diesen Versuch werden 17 Messungen mit unterschiedlichen Frequenzen pro Lautsprecher durchgeführt.
-Das erzeugte Sinussignal gilt als Referenzwert welcher bei jeder Messung die Amplitude von 1,5V besitzt.
-Das zu vergleichende Ausgangssignal des Lautsprechers wird über ein Mikrophon aufgenommen, welches einen stets gleichen Abstand zum Lautsprecher hat.
-Beim vergleichen beider Werte sollte sowohl eine Phasenverschiebung als auch ein Amplitudenunterschied festgestellt werden. dazu Später mehr.
-Die einzelnen Messungen werden mit Frequenzen: $f = 100,200,300,400,500,700,850 Hz, 1, 1.2, 1.5, 1.7, 2, 3, 4, 5, 6, 10kHz$ durchgeführt. Hierbei ist zu beachten, dass die Spannung des Sinusgenerators bei jeder Messung auf 1.5V gestellt werden, da dieser mit jeder Messung ein wenig variiert.
-Die Messungen werden im "Single Sequence Mode" durchgeführt, was die Lärmbelastung verringert.
-Bei jeder Messung wird sowohl die Amplitude der Ausgangssignals als auch die Phasenverschiebung zur Eingangsspannung bemessen und protokolliert \ref{} TODO
+Um den Frequenzgang eines Lautsprechers zu ermitteln werden Sinussignale mit verschiedenen Frequenzen an diesen angelegt. Die Amplitude eines Signals sollte stets dieselbe sein. Das Signal wird mit einem Sinusgenerator erzeugt und an den Lautsprecher angelegt. Dieses Signal wird an einem Kanal im Oszilloskop gemessen. Der Ton der dabei entsteht wird mit einem Mikrofon aufgenommen und ebenfalls an einem Kanal des Oszilloskops gemessen. Das Mikrofon sollte möglichst stets den gleichen Abstand zum Lautsprecher haben.
+Für diesen Versuch werden 17 Messungen, mit unterschiedlichen Frequenzen pro Lautsprecher, gemacht.
+Das erzeugte Sinussignal gilt als Referenzwert welches bei jeder Messung eine Amplitude von 1,5V besitzt.
+Beim Vergleichen beider Werte sollte sowohl eine Phasenverschiebung als auch ein Amplitudenunterschied festgestellt werden. Dazu später mehr.
+Die einzelnen Messungen werden mit folgenden Frequenzen durchgeführt: 
+\begin{table}
+\begin{tabular}{|c|c|c|}
+100 & 850  & 3000 \\
+200 & 1000 & 4000 \\
+300 & 1200 & 5000 \\
+400 & 1500 & 6000 \\
+500 & 1700 & 10000 \\
+700 & 2000 & \\
+\end{tabular}
+\centering
+\label{tab:Frequences}
+\caption{Frequenzen zur Frequenzgangmessung}
+\end{table}
+Die Messungen werden im "Single Sequence Mode" durchgeführt, um einen Signalausschnitt zu erlangen.
+Bei jeder Messung wird sowohl die Amplitude des Ausgangssignals, als auch die Phasenverschiebung gemessen und protokolliert. \ref{} TODO
 \label{chap:VERSUCH_2_FRAGESTELLUNG}
 
 \section{Messwerte}
+\label{chap:VERSUCH_2_MESSWERTE}
 \begin{table}[H]
 \centering
 \begin{tabular}{ccc}
@@ -69,6 +82,54 @@ Bei jeder Messung wird sowohl die Amplitude der Ausgangssignals als auch die Pha
 \label{tab:MLk}
 \caption{Messwerte Lautsprecher klein}
 \end{table}
-\label{chap:VERSUCH_2_MESSWERTE}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{ein-ausgang.png}
+\caption{Eingangsignal Lautsprecher und Ausgangssignal Mikrofon}
+\label{img:EingangAusgang}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{amplitude_gross.png}
+\caption{Amplitude Lautsprecher gross}
+\label{img:AmplitudeLGross}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{amplitude_klein.png}
+\caption{Amplitude Lautsprecher klein}
+\label{img:AmplitudeLklein}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{phase_gross.png}
+\caption{Phase Lautsprecher Gross}
+\label{img:phase_gross}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{phase_klein.png}
+\caption{Phase Lautsprecher klein}
+\label{img:PhaseKlein}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{amplitudengang.png}
+\caption{Bode-Diagramm Amplitudengang}
+\label{img:BodeAmplitude}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=165mm]{Phasengang.png}
+\caption{Bode-Diagramm Phasengang}
+\label{img:PhasenGang Bode-Diagramm}
+\end{figure}
 
 \section{Auswertung und Interpretation}
