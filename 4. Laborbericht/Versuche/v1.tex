@@ -19,13 +19,25 @@ Diese Sprünge an den Rändern des Fensters werden also als schnelle Signalände
 Da dieser Effekt fatale Folgen für das Spektrum des Signals hätte kann nicht einfach so naiv vorgegangen werden.
 Um diesen Effekt zu kompensieren wird der Ansatz des Windowing also erweitert. Diese Erweiterung sieht eine Multiplikation des Signals mit einer Fensterfunktion vor. Diese ist eine gerade Funktion, die in ihrer Symmetrieachse den Wert ein hat und an ihren enden links und rechts gegen Null konvergiert. Diese Eigenschaften treffen auf die Gaussfunktion zu, die in dieser Aufgabe als Fensterfunktion benutzt wird. Die Fensterbreite der Gaussfunktin beträgt hier einen Wert von vier Standartabweichungen.
 Auch hier spielt die Unschärferelation mit hinein. Es gilt also je breiter die Fensterfunktion, desto größer die Frequenzauflösung und umgekehrt. ---TODO ref skript S 21 Windowing. Um nicht wertvolle Signalinformationen an den Rändern der Fensterfunktion zu verlieren müssen sich die Fenster zu 50 \% überlappen. Die Fensterbreite ist in dieser Aufgabe 512 Samples. 
-Nun kann in allen Fenstern lokal die Fouriertransformation durchgeführt werden. Aus den einzelnen Spektren wird dann das Arithmetische Mittel bestimmt. Dieses wird dann als Spektrum des Signals angesehen. 
-
+Nun kann in allen Fenstern lokal die Fouriertransformation durchgeführt werden. Aus den einzelnen Spektren wird dann das Arithmetische Mittel bestimmt. Dieses wird dann als Spektrum des Signals angesehen.
 
 \newpage
 \section{Messwerte}
 \label{chap:VERSUCH_1_MESSWERTE}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{media/triggertest.png}
+\label{fig:Wurst_Triggered}
+\caption{Das Wort 'Wurst' in der Zeitdomäne.}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{media/Wurst.png}
+\label{fig:Wurst_Fourier}
+\caption{Das Wort 'Wurst' in der Frequenzdomäne}
+\end{figure}
 
 
 \section{Auswertung und Interpretation}
 \label{chap:VERSUCH_1_AUSWERTUNG}
+In Abbildung \ref{fig:Wurst_Triggered} ist ein Beispielhaftes Signal in der Zeitdomäne zu sehen. Der Blaue Signalverlauf ist das Signal ohne Triggerung. Der Grüne Graph ergibt sich aus dem blauen Signal nach Triggerung und Zuschnitt auf eine Sekunde. Das Ergebnis entspricht also den Erwartungen. Für dieses Beispielhafte Signal ist in Abbildung \ref{fig:Wurst_Fourier} das Spektrum zu sehen. 
+Die in diesem Versuch implementierten Funktionen werden im folgenden für die Implementierung des Spracherkenners benutzt.
