@@ -1,0 +1,125 @@
+sprecher A 20/20
+sprecher B 14/20
+Fehler:
+Hoch	0
+Tief	1
+Links	2
+Rechts	3
+
+Erfolgreich festgestellt sind 34 von 40 worten, 85.0%
+
+
+
+
+Datei : Aufnahmen_Test_A_Hoch_0.csv:
+Wort: Hoch, Korrellation: 0.9949699116986288
+Happy
+Datei : Aufnahmen_Test_A_Hoch_1.csv:
+Wort: Hoch, Korrellation: 0.9961134636979465
+Happy
+Datei : Aufnahmen_Test_A_Hoch_2.csv:
+Wort: Hoch, Korrellation: 0.9943265534738429
+Happy
+Datei : Aufnahmen_Test_A_Hoch_3.csv:
+Wort: Hoch, Korrellation: 0.9916636212550298
+Happy
+Datei : Aufnahmen_Test_A_Hoch_4.csv:
+Wort: Hoch, Korrellation: 0.9850630917926129
+Happy
+Datei : Aufnahmen_Test_A_Tief_0.csv:
+Wort: Tief, Korrellation: 0.9507890896105146
+Happy
+Datei : Aufnahmen_Test_A_Tief_1.csv:
+Wort: Tief, Korrellation: 0.965535360719482
+Happy
+Datei : Aufnahmen_Test_A_Tief_2.csv:
+Wort: Tief, Korrellation: 0.9517474221829108
+Happy
+Datei : Aufnahmen_Test_A_Tief_3.csv:
+Wort: Tief, Korrellation: 0.9519027861543936
+Happy
+Datei : Aufnahmen_Test_A_Tief_4.csv:
+Wort: Tief, Korrellation: 0.9648042816929174
+Happy
+Datei : Aufnahmen_Test_A_Links_0.csv:
+Wort: Links, Korrellation: 0.9447437121447075
+Happy
+Datei : Aufnahmen_Test_A_Links_1.csv:
+Wort: Links, Korrellation: 0.956021977269752
+Happy
+Datei : Aufnahmen_Test_A_Links_2.csv:
+Wort: Links, Korrellation: 0.9748940642907202
+Happy
+Datei : Aufnahmen_Test_A_Links_3.csv:
+Wort: Links, Korrellation: 0.9477619473743251
+Happy
+Datei : Aufnahmen_Test_A_Links_4.csv:
+Wort: Links, Korrellation: 0.9463731693970923
+Happy
+Datei : Aufnahmen_Test_A_Rechts_0.csv:
+Wort: Rechts, Korrellation: 0.9846357337150913
+Happy
+Datei : Aufnahmen_Test_A_Rechts_1.csv:
+Wort: Rechts, Korrellation: 0.9918529273809944
+Happy
+Datei : Aufnahmen_Test_A_Rechts_2.csv:
+Wort: Rechts, Korrellation: 0.9685502765136697
+Happy
+Datei : Aufnahmen_Test_A_Rechts_3.csv:
+Wort: Rechts, Korrellation: 0.9791542873519523
+Happy
+Datei : Aufnahmen_Test_A_Rechts_4.csv:
+Wort: Rechts, Korrellation: 0.9878613840634793
+Happy
+Datei : Aufnahmen_Test_B_Hoch_0.csv:
+Wort: Hoch, Korrellation: 0.9852310894079964
+Happy
+Datei : Aufnahmen_Test_B_Hoch_1.csv:
+Wort: Hoch, Korrellation: 0.9748669234114135
+Happy
+Datei : Aufnahmen_Test_B_Hoch_2.csv:
+Wort: Hoch, Korrellation: 0.9776894976417508
+Happy
+Datei : Aufnahmen_Test_B_Hoch_3.csv:
+Wort: Hoch, Korrellation: 0.9799442832887554
+Happy
+Datei : Aufnahmen_Test_B_Hoch_4.csv:
+Wort: Hoch, Korrellation: 0.9852644262973782
+Happy
+Datei : Aufnahmen_Test_B_Tief_0.csv:
+Wort: Tief, Korrellation: 0.9758007782380901
+Happy
+Datei : Aufnahmen_Test_B_Tief_1.csv:
+Wort: Tief, Korrellation: 0.9621102714069187
+Happy
+Datei : Aufnahmen_Test_B_Tief_2.csv:
+Wort: Links, Korrellation: 0.9379305567948955
+Datei : Aufnahmen_Test_B_Tief_3.csv:
+Wort: Tief, Korrellation: 0.9772491196253863
+Happy
+Datei : Aufnahmen_Test_B_Tief_4.csv:
+Wort: Tief, Korrellation: 0.9796133691737986
+Happy
+Datei : Aufnahmen_Test_B_Links_0.csv:
+Wort: Tief, Korrellation: 0.9569875190295235
+Datei : Aufnahmen_Test_B_Links_1.csv:
+Wort: Links, Korrellation: 0.9761817732923553
+Happy
+Datei : Aufnahmen_Test_B_Links_2.csv:
+Wort: Tief, Korrellation: 0.9844741970271924
+Datei : Aufnahmen_Test_B_Links_3.csv:
+Wort: Links, Korrellation: 0.9563216058603446
+Happy
+Datei : Aufnahmen_Test_B_Links_4.csv:
+Wort: Links, Korrellation: 0.9826913232035666
+Happy
+Datei : Aufnahmen_Test_B_Rechts_0.csv:
+Wort: Rechts, Korrellation: 0.9876236201943333
+Happy
+Datei : Aufnahmen_Test_B_Rechts_1.csv:
+Wort: Rechts, Korrellation: 0.9817192176817385
+Happy
+Datei : Aufnahmen_Test_B_Rechts_2.csv:
+Datei : Aufnahmen_Test_B_Rechts_3.csv:
+Wort: Links, Korrellation: 0.9508163790397997
+Datei : Aufnahmen_Test_B_Rechts_4.csv:
