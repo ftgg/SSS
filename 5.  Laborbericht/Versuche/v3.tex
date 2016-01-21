@@ -10,23 +10,21 @@ Im vorigen Versuch wurde die Genauigkeit des Analog / Digitalwandlers gemessen u
 theoretischen Quantisierungsfehler verglichen. Dieser dritte Versuch befässt sich
 im gegensatz zum vorhergehenden mit der Genauigkeit des Digital-Analog-Wandlers.
 Es wird diesmal eine Spannung an dem Wandler digital eingestellt, welche er dann analog ausgibt.
-Bei der Wandlungen vom Analogen ins Digitale findet stets eine Diskretisierug der kontinuierlichen Werte statt.
-Möchte man Digitale(diskrete) Werte als Analoge Spannung ausgeben, hat man wiederum einen Quantisierungsfehler.
+Bei Wandlungen vom Analogen ins Digitale findet stets eine Diskretisierung der kontinuierlichen Werte statt.
+Möchte man digitale(diskrete) Werte als analoge Spannung ausgeben, hat man wiederum einen Quantisierungsfehler.
 Dies hängt damit zusammen, dass man keine unendlich langen Bitstrings abspeichern kann.
 Der Digital-Analog Wandler müsste einen unendlich großen Speicher haben, um den exakten Wert auszugeben.
-Dies ist jedoch praktisch nicht umsetzbar, weshalb man sich mit endlichen Bitstrings begnügen muss.
-Das stellt jedoch kein Problem dar, da schon mit wenigen Bits zur Beschreibung einer Spannung, diese
-recht genau repräsentiert wird. 
+Dies ist jedoch praktisch nicht umsetzbar, weshalb man sich mit endlichen Bitstrings begnügen muss. Das stellt jedoch kein Problem dar, da schon mit wenigen Bits eine Spannung, recht genau repräsentiert wird. 
 So hat man Beispielsweise mit einem 8-Bit AD/DA Wandler über einen Spannungsbereich von einem Volt eine Genauigkeit von
-$\approx \pm 3.91 \mu V$
+$\approx \pm 3.91 mV$
 Die Bitzahl eines AD/DA - Wandlers gibt also die Auflösung dessen an.
 In diesem Fall handelt es sich um einen 10 - Bit DA-Wandler, dessen Genauigkeit 
 praktisch gemessen werden soll. Dieser gemessene Fehler wird dann mit dem theoretischen Quantisierungsfehler verglichen.
-Der Theoretische Fehler berechnet sich mit folgender Abschrift:
+Der Theoretische Fehler berechnet sich mit folgender Formel:
 \begin{equation}
 \Delta U = \frac{U_{max} - U_{min}}{2^n}
 \end{equation}
-Bei $U_{max} - U_{min}$ handelt es sich um den Bereich der Maximal dargestellt werden kann. $2^n$ n ist gerade die Anzahl an Bits des DA-Wandlers.
+Bei $U_{max} - U_{min}$ handelt es sich um den Bereich der maximal dargestellt werden kann. $2^n$ n ist gerade die Anzahl an Bits des DA-Wandlers.
 Der DA-Wandler, der in diesem Versuch zum Einsatz kommt hat einen Mindestspannung von $0 V$ und eine Höchstspannung von $5 V$. Auf diese Weise ergibt sich ein theoretischer Quantisierungsfehler von $ \approx \pm 4,88 mV$
 Diesen Wert experimentell zu bestimmen wird eine Reihe von Spannungen von $0.5 V$ bis $5.0 V$ in $0.5 V$ Schritten eingestellt. Die ausgegebene Spannung wird dann mit einem Feinmessgerät gemessen. Mit Hilfe der Werte des Feinmessgerätes und der eingestellten Spannung wird dann die Standardabweichung bestimmt. Diese wird dann als praktisch gemessener Quantisierungsfehler genommen.
 
@@ -55,8 +53,8 @@ Eingestellt & Gemessen \\
 \end{table}
 
 Errechnete Standartabweichung: $0.0512022 V$ $ \approx 51.2 mV$
-
+\newpage
 \section{Auswertung und Interpretation}
 \label{chap:VERSUCH_3_AUSWERTUNG}
 Betrachtet man den Theoretischen Quantisierungsfehler von 4.88mV und die gemessenen Standartabweichung, dann lässt sich eine prozentuale Abweichung von 90\% feststellen.
-Es besteht quasi keine Korrelation zwischen beiden Werten. Man muss annehmen, dass die Abweichung von ca. einem Faktor 10 aufgrund der Ungenauigkeit des Feinmessgeräts entstanden ist. Man müsste den Versuch eventuell mit einem neueren Messgerät erneut durchführen. 
+Es besteht quasi keine Korrelation zwischen beiden Werten. Man muss annehmen, dass die Abweichung von ca. einem Faktor 10 aufgrund der Ungenauigkeit des Feinmessgeräts entstanden ist. Man müsste den Versuch eventuell mit einem genaueren Messgerät erneut durchführen. 
