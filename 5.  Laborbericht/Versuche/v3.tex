@@ -1,13 +1,62 @@
 %
-% CHAPTER Versuch 1
+% CHAPTER Versuch 3
 %
 \chapter{Genauigkeit der DA-Wandlung}
 \label{chap:VERSUCH_3}
- 
+ Bestimmung der Genauigkeit der Digial Analogwandlers ME-RedLab USB-1208LLS.
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
 \label{chap:VERSUCH_3_FRAGESTELLUNG}
+Im vorigen Versuch wurde die Genauigkeit des Analog / Digitalwandlers gemessen und mit dem 
+theoretischen Quantisierungsfehler verglichen. Dieser dritte Versuch befässt sich
+im gegensatz zum vorhergehenden mit der Genauigkeit des Digital-Analog-Wandlers.
+Es wird diesmal eine Spannung an dem Wandler digital eingestellt, welche er dann analog ausgibt.
+Bei der Wandlungen vom Analogen ins Digitale findet stets eine Diskretisierug der kontinuierlichen Werte statt.
+Möchte man Digitale(diskrete) Werte als Analoge Spannung ausgeben, hat man wiederum einen Quantisierungsfehler.
+Dies hängt damit zusammen, dass man keine unendlich langen Bitstrings abspeichern kann.
+Der Digital-Analog Wandler müsste einen unendlich großen Speicher haben, um den exakten Wert auszugeben.
+Dies ist jedoch praktisch nicht umsetzbar, weshalb man sich mit endlichen Bitstrings begnügen muss.
+Das stellt jedoch kein Problem dar, da schon mit wenigen Bits zur Beschreibung einer Spannung, diese
+recht genau repräsentiert wird. 
+So hat man Beispielsweise mit einem 8-Bit AD/DA Wandler über einen Spannungsbereich von einem Volt eine Genauigkeit von
+$\approx \pm 3.91 \mu V$
+Die Bitzahl eines AD/DA - Wandlers gibt also die Auflösung dessen an.
+In diesem Fall handelt es sich um einen 10 - Bit DA-Wandler, dessen Genauigkeit 
+praktisch gemessen werden soll. Dieser gemessene Fehler wird dann mit dem theoretischen Quantisierungsfehler verglichen.
+Der Theoretische Fehler berechnet sich mit folgender Abschrift:
+\begin{equation}
+\Delta U = \frac{U_{max} - U_{min}}{2^n}
+\end{equation}
+Bei $U_{max} - U_{min}$ handelt es sich um den Bereich der Maximal dargestellt werden kann. $2^n$ n ist gerade die Anzahl an Bits des DA-Wandlers.
+Der DA-Wandler, der in diesem Versuch zum Einsatz kommt hat einen Mindestspannung von $0 V$ und eine Höchstspannung von $5 V$. Auf diese Weise ergibt sich ein theoretischer Quantisierungsfehler von $ \approx \pm 4,88 mV$
+Diesen Wert experimentell zu bestimmen wird eine Reihe von Spannungen von $0.5 V$ bis $5.0 V$ in $0.5 V$ Schritten eingestellt. Die ausgegebene Spannung wird dann mit einem Feinmessgerät gemessen. Mit Hilfe der Werte des Feinmessgerätes und der eingestellten Spannung wird dann die Standardabweichung bestimmt. Diese wird dann als praktisch gemessener Quantisierungsfehler genommen.
+
+
 \section{Messwerte}
 \label{chap:VERSUCH_3_MESSWERTE}
 
+\begin{table}[H]
+\begin{tabular}{c|c}
+Eingestellt & Gemessen \\
+\hline
+0.5 & 0.512 \\
+1.0 & 1.016 \\ 
+1.5 & 1.521 \\ 
+2.0 & 2.033 \\ 
+2.5 & 2.539\\
+3.0 & 3.047\\
+3.5 & 3.559\\
+4.0 & 4.065\\
+4.5 & 4.57\\
+5.0 & 5.073\\
+\end{tabular} 
+\centering
+\caption{gemessene Werte}
+\label{TABLE:VERSUCH3}
+\end{table}
+
+Errechnete Standartabweichung: $0.0512022 V$ $ \approx 51.2 mV$
+
 \section{Auswertung und Interpretation}
 \label{chap:VERSUCH_3_AUSWERTUNG}
+Betrachtet man den Theoretischen Quantisierungsfehler von 4.88mV und die gemessenen Standartabweichung, dann lässt sich eine prozentuale Abweichung von 90\% feststellen.
+Es besteht quasi keine Korrelation zwischen beiden Werten. Man muss annehmen, dass die Abweichung von ca. einem Faktor 10 aufgrund der Ungenauigkeit des Feinmessgeräts entstanden ist. Man müsste den Versuch eventuell mit einem neueren Messgerät erneut durchführen. 
