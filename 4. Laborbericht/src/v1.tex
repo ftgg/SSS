@@ -2,5 +2,142 @@
  caption=Zum einlesen der Mundharmonika Schwingung
  captionpos=b,
  label=lst:read] 
+import pyaudio
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.signal as wim
+import scipy.stats
+
+FORMAT = pyaudio.paInt16
+SAMPLEFREQ = 44100
+FRAMESIZE = 1024
+NOFFRAMES = 220
+TRIGGER = 400
+
+def trigger(signal):  
+    for i in range(0,len(signal)):
+        if signal[i] > TRIGGER:
+            signal = signal[i:]
+            break
+    restlength = min(len(signal),44100)
+    zeros = np.array(np.zeros(44100))
+    for i in range(0, restlength):
+        zeros[i] = signal[i]
+    for i in range(0,44100):
+        if zeros[44099-i] > TRIGGER/2:
+            break
+        zeros[44099-i] = 0
+    return zeros
+
+def record():
+    p = pyaudio.PyAudio()
+    print("running")
+    stream = p.open(format=FORMAT, channels=1, rate=SAMPLEFREQ, input=True)
+    data = stream.read(SAMPLEFREQ*2)
+    decoded = np.fromstring(data, 'Int16')
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
+    print("done")
+    decoded = trigger(decoded)
+    plt.plot(decoded)
+    plt.show()
+
+    file = "fab.csv"
+    np.savetxt(file,decoded,delimiter=',')
+    return decoded
+
+def fft_window(signal):
+    gauss = wim.gaussian(512,std=512/4)
+    fourier = np.zeros(256)
+    tmp = np.zeros(512)
+    for i in range(0,44100 - 512, 256):
+        for a in range(0,512):
+            tmp[a] = gauss[a] * signal[i + a]
+        fourier = fourier + np.abs(np.fft.fft(tmp, axis=0)[:256])
+    fourier = (fourier / 171)/450
+    return fourier
+
+def fft_std(data, filename=''):
+    fft = np.abs(np.fft.fft(data, axis=0))
+    plt.figure(figsize=(800/75, 600/75), dpi=75)
+    plt.plot(fft[:5000]/len(fft))  
+    plt.autoscale(enable=True,axis = "x",tight = True)
+    plt.xlabel('Frequency [$Hz$]')
+    plt.ylabel('$\\left| Y \\left( f \\right ) \\right|$')
+    if filename is not '':
+        plt.savefig(filename+'.png', dpi=75)
+        plt.close()
+    plt.show()
+    return 
+    
+def ref_spektren(filename):
+    spektrum = np.zeros(256)
+    for id in range(0,5):
+        data = np.genfromtxt("{}_{}.csv".format(filename, id), delimiter=',')
+        data = fft_window(data) #spektrum erzeugt
+        spektrum = spektrum + data;
+    spektrum = spektrum / 5
+    return spektrum
+
+def get_freq(M):
+    dt = 1 / SAMPLEFREQ
+    freq = np.zeros(M)    
+    for i in range(0,M):
+        freq[i] = i / (M*dt)
+    return freq
+
+def save_spekt(filename):
+    plt.figure(figsize=(800/75, 600/75), dpi=75)
+    ref = ref_spektren(filename)
+    plt.xlabel('Frequency [$Hz$]')
+    plt.ylabel('$\\left| Y \\left( f \\right ) \\right|$')
+    plt.plot(get_freq(50)[:25],ref[:25],c='b',lw=1)
+    plt.show()
+    np.savetxt(filename,ref,delimiter=',')
+    
+def korellation(spekA, spekB):
+    return scipy.stats.pearsonr(spekA, spekB)    
+
+def spracherkenner(wort):
+    hoch = np.genfromtxt("Aufnahmen_Referenz_Hoch", delimiter=',')
+    tief = np.genfromtxt("Aufnahmen_Referenz_Tief", delimiter=',')
+    links = np.genfromtxt("Aufnahmen_Referenz_Links", delimiter=',')
+    rechts = np.genfromtxt("Aufnahmen_Referenz_Rechts", delimiter=',')
+    wortschatz = { "Hoch" : hoch, "Tief" : tief, "Links" : links, "Rechts": rechts}
+    
+    wort = fft_window(wort)
+    max = 0;
+    finalkey = "nicht gefunden"
+    
+    for key in wortschatz:
+        korrel = korellation(wort,wortschatz[key]) 
+        if(korrel[0] > max):
+            max = korrel[0]
+            finalkey = key
+    
+    
+    if(max < 0.9):
+        finalkey = "nicht gefunden"
+    else: 
+        print("Wort: {}, Korrellation: {}".format(finalkey,max))
+    return finalkey
+    
+def all_data():
+    number = 0
+    success = 0
+    for sprecher in ["A","B"]:
+        for wort in ["Hoch","Tief","Links","Rechts"]:
+            for i in [0,1,2,3,4]:
+                number = number + 1
+                print("Datei : Aufnahmen_Test_{}_{}_{}.csv:".format(sprecher, wort, i))
+                finalkey = spracherkenner(np.genfromtxt("Aufnahmen_Test_{}_{}_{}.csv".format(sprecher, wort, i), delimiter=','))
+                if(finalkey == wort):
+                    print("Happy") 
+                    success = success+1
+                    
+    print("Erfolgreich festgestellt sind {} von {} worten, {}%".format(success,number,(success / number) * 100))
+    return     
+all_data()
 
 \end{lstlisting}
