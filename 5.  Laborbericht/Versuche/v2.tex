@@ -2,18 +2,58 @@
 % CHAPTER Versuch 2
 %
 \chapter{Genauigkeit der AD-Wandlung}
-
 \label{chap:VERSUCH_2}
+
 
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
 \label{chap:VERSUCH_2_FRAGESTELLUNG}
+Fragestellung: Die Genauigkeit der AD-Wandlung ist anhand mehrerer Messungen zu prüfen.\\
+Messprinzip: Es ist zunächst der Quantisierungsfehler des 11-Bit-Wandlers zu berechnen. Anschließend werden im Bereich von 1 bis 10 V Gleichspannung zehn Messungen im Intervall von jeweils 1 V durchgeführt. Die Spannung wird dabei mit drei verschiedenen Geräten gemessen: Dem Feinmessgerät Keithley TRMS 179, dem analogen Multimeter Philips PM 2503 und mit dem AD-Wandler. Alle Messergebnisse werden in einer handschriftlichen Tabelle notiert. Anschließend wird für jeden der Tabelleneinträge der Messfehler für das Multimeter und den AD-Wandler bestimmt. Die Werte des Feinmessgeräts werden als Referenz genommen. Daraus werden dann die Standardabweichungen der beiden Messgeräte als Genauigkeitsmaß ermittelt.\\
+Aufbau: Das Feinmessgerät, das Multimeter und der AD-Wandler werden an eine Spannungsquelle angeschlossen.\\
+Messmittel: Feinmessgerät Keithley TRMS 179, Multimeter Philips PM 2503, A/D-Wandler.
 
 \section{Messwerte}
 \label{chap:VERSUCH_2_MESSWERTE}
+Der Quantisierungsfehler wird nach der Formel 
+\begin{equation}
+\Delta U = \frac{U_{max} - U_{min}}{2^n}
+\end{equation}
+berechnet, wobei $U_{min}$ = 10 und $U_{max}$ = 10 ist. Da es sich um einen 11-Bit-Wandler handelt, beträgt n=11. Einsetzen in die Formel ergibt:
+\begin{equation}
+\Delta U = \frac{10V - (-10V)}{2^{11}} = \frac{10V + 10V}{2^{11}} = \frac{20V}{2^{11}} = 9,765 *10^{-3}V
+\end{equation}
+Der Quantisierungsfehler beträgt somit 9,765 mV.\\
+Die Messwerte der oben beschriebenen zehn Messungen sind in nachfolgender Tabelle aufgeführt:\\
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Mess-Nr. & Keithley & Philipps & AD-Wandler \\ \hline
+1 & 0,997 & 0,995 & 0,99609 \\ \hline
+2 & 1,995 & 1,920 & 1,992 \\ \hline
+3 & 3,007 & 2,88 & 2,998 \\ \hline
+4 & 3,996 & 4,02 & 3,984 \\ \hline
+5 & 4,975 & 5,0 & 4,986 \\ \hline
+6 & 5,991 & 6,0 & 5,976 \\ \hline
+7 & 6,994 & 6,99 & 6,992 \\ \hline
+8 & 7,980 & 7,99 & 7,968 \\ \hline
+9 & 9,007 & 8,99 & 8,994 \\ \hline
+10 & 10 & 9,92 & 9,99 \\ \hline
+\end{tabular}
+\caption{Aufgabe 2}
+\end{center}
+\end{table}
 
-\section{Auswertung und Interpretation}
-\label{chap:AUSWERTUNGUNDINTERPRETATION}
+\section{Auswertung}
+\label{chap:VERSUCH_2_AUSWERTUNG}
+Für die Berechnung der Standartabweichung benutzten wir das Keithley-Messgerät als Bezugsnormal. 
+Die Standartabweichung des Messgeräts von Phillips beträgt: 0.057585 V
+Die Standartabweichung des AD-Wandlers beträgt: 0.010529 V
 
 
+\section{Interpretation}
+\label{chap:VERSUCH_2_INTERPRETATION}
+Die hohe Standartabweichung des Phillips kommt hauptsächlich durch das im Vergleich zum A/D-Wandler ungenaue Ablesen des analogen Multimeters zustande. Selbst wenn man das Multimeter derart abliest, dass der Zeiger mit seinem Spiegelbild auf dem hinter ihm liegenden Spiegel zusammenfällt, bleibt eine gewisse Restungenauigkeit. 
+Die Standartabweichung des AD-Wandlers liegt sehr nahe bei dem theoretischen Quantisierungsfehler. Was sehr erfreulich ist. 
 
 
